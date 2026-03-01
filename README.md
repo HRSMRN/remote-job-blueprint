@@ -1,4 +1,4 @@
-# Dreamscape Jobs Hub
+# Remote Job Blueprint
 
 ## Project info
 
