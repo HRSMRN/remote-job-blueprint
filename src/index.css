@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 100% 4%;
+    --foreground: 45 100% 98%;
+
+    --card: 222 60% 8%;
+    --card-foreground: 45 100% 98%;
+
+    --popover: 222 60% 8%;
+    --popover-foreground: 45 100% 98%;
+
+    --primary: 216 100% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 213 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 222 30% 12%;
+    --muted-foreground: 40 20% 70%;
+
+    --accent: 42 100% 57%;
+    --accent-foreground: 222 60% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 216 80% 25%;
+    --input: 216 80% 25%;
+    --ring: 213 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Brand tokens */
+    --cobalt: 216 100% 34%;
+    --azure: 213 100% 50%;
+    --gold: 42 100% 57%;
+    --cream: 45 100% 98%;
+    --beige: 36 56% 91%;
+    --charcoal: 0 0% 14%;
+
+    /* Glow tokens */
+    --glow-primary: 0 0% 100% / 0.08;
+    --glow-azure: 213 100% 50% / 0.4;
+    --glow-gold: 42 100% 57% / 0.4;
+    --glow-soft: 213 100% 50% / 0.15;
+
+    --sidebar-background: 222 60% 8%;
+    --sidebar-foreground: 45 100% 98%;
+    --sidebar-primary: 216 100% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 213 100% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 216 80% 25%;
+    --sidebar-ring: 213 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--azure) / 0.5), 0 0 60px hsl(var(--azure) / 0.2);
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 20px hsl(var(--gold) / 0.5), 0 0 60px hsl(var(--gold) / 0.2);
+  }
+
+  .box-glow {
+    box-shadow: 0 0 20px hsl(var(--azure) / 0.3), 0 0 60px hsl(var(--azure) / 0.1), inset 0 0 20px hsl(var(--azure) / 0.05);
+  }
+
+  .box-glow-gold {
+    box-shadow: 0 0 20px hsl(var(--gold) / 0.4), 0 0 60px hsl(var(--gold) / 0.15);
+  }
+
+  .border-glow {
+    border: 1px solid hsl(var(--azure) / 0.3);
+    box-shadow: 0 0 15px hsl(var(--azure) / 0.2), inset 0 0 15px hsl(var(--azure) / 0.05);
+  }
+
+  .border-glow-gold {
+    border: 1px solid hsl(var(--gold) / 0.4);
+    box-shadow: 0 0 15px hsl(var(--gold) / 0.2), inset 0 0 15px hsl(var(--gold) / 0.05);
+  }
+
+  .gradient-bg {
+    background: 
+      radial-gradient(ellipse 80% 60% at 50% 0%, hsl(var(--cobalt) / 0.6) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 50%, hsl(var(--azure) / 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 20% 80%, hsl(var(--cobalt) / 0.3) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 30% at 60% 100%, hsl(var(--gold) / 0.08) 0%, transparent 60%),
+      hsl(var(--background));
+  }
+
+  .icon-glow {
+    filter: drop-shadow(0 0 8px hsl(var(--azure) / 0.5));
+  }
+}
